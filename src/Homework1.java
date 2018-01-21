@@ -1,4 +1,9 @@
+// use SDK Version 9
+
 public class Homework1 {
+
+    public String test = "";
+    public String check = "251-*32*+";
 
 	public static void main(String[] args) {
 		String input = "";
@@ -15,6 +20,8 @@ public class Homework1 {
 		// End of arguments input sample
 		
 		// TODO: Implement your project here
+
+
 		Node mainNode = new Node();
 		Node tempNode = mainNode;
 		for (int i = 0; i < input.length(); i++) {
@@ -22,11 +29,12 @@ public class Homework1 {
 			tempNode = tempNode.nodeRight;
 			tempNode.number = String.valueOf(input.charAt(i));
 		}
+
 		mainNode = infix(mainNode.nodeRight);
 		String infix = inorder(mainNode);
 		System.out.println(infix.substring(1,infix.length()-1)+ "=" + calculate(mainNode));
 
-
+    //test in console >> java Homework1 251-*32*+
 	}
 
 	public static Node infix(Node infixNode){
