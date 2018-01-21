@@ -37,6 +37,9 @@ public class Homework1 {
     //test in console >> java Homework1 251-*32*+
 	}
 
+
+
+	// infix function
 	public static Node infix(Node infixNode){
 
 		Node tempNode = infixNode;
@@ -68,6 +71,7 @@ public class Homework1 {
 		return infixNode;
 	}
 
+	//inorder function
 	public static String inorder(Node inorderNode) {
 		String left = "";
 		String right = "";
@@ -81,6 +85,8 @@ public class Homework1 {
 		return (left + inorderNode.number + right);
 	}
 
+
+	//calculate function
 	public static int calculate(Node calculateNode) {
 
 		if (calculateNode.number.matches("[0-9]"))
