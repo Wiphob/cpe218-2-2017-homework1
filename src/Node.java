@@ -15,15 +15,10 @@ public class Node {
        // default value
 
 
-
     }
 
-
-
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return number;
+    }
 }
