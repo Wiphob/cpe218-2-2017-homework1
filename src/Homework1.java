@@ -11,10 +11,11 @@ import javax.swing.UIManager;
 
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeSelectionModel;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
-
+import javax.swing.tree.DefaultTreeCellRenderer;
 import java.net.URL;
 import java.io.IOException;
 import java.awt.Dimension;
@@ -40,6 +41,13 @@ public class Homework1 extends JPanel
 		tree = new JTree(top);
 		tree.getSelectionModel().setSelectionMode
 				(TreeSelectionModel.SINGLE_TREE_SELECTION);
+
+        //Set the icon for leaf nodes.
+        ImageIcon leafIcon = createImageIcon("middle.gif");
+        DefaultTreeCellRenderer renderer = new DefaultTreeCellRenderer();
+            renderer.setOpenIcon(leafIcon);
+            renderer.setClosedIcon(leafIcon);
+            tree.setCellRenderer(renderer);
 
 		//Listen for when the selection changes.
 		tree.addTreeSelectionListener(this);
@@ -180,7 +188,7 @@ public class Homework1 extends JPanel
 			//then we dont need to cut "(" and ")" just show number
 		}
 
-		else text+=(text.substring(1,text.length()-1)+ "=" + calculate(num));
+		else text=(text.substring(1,text.length()-1)+ "=" + calculate(num));
 
 		htmlPane.setText(text);
 	}
@@ -222,7 +230,7 @@ public class Homework1 extends JPanel
 
 	private static void createAndShowGUI(Node finalMainNode) {
 		//Create and set up the window.
-		JFrame frame = new JFrame("TreeDemo");
+		JFrame frame = new JFrame("Binary Calculator Tree Homework");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		//Add content to the window.
