@@ -238,6 +238,7 @@ public class Homework1 extends JPanel
 
 		//Display the window.
 		frame.pack();
+		OLO
 		frame.setVisible(true);
 	}
 }
